@@ -1,0 +1,123 @@
+:root{
+    --white-color: #fff;
+    --gray-color: #333;
+    --blue-color: #007bff;
+    --light-gray-color: #f4f4f4;
+    --yellow: #ffc107
+}
+
+* {
+    font-family: Arial, Helvetica, sans-serif;
+}
+body{
+    margin: 0;
+    background-color: var(--light-gray-color);
+}
+main {
+    max-width: 80vw;
+    margin: 0 auto;  
+}
+h1 {
+    background-color:var(--blue-color);
+    font-size: 24px;
+    margin: 0;
+    color: var(--white-color);
+    text-align: center;
+    padding: 20px;
+}
+
+div ul {
+    margin: 0;
+    background-color: var(--gray-color);    
+    padding: 15px;
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    align-items:  center;
+    list-style: none;
+}
+
+div ul li a {
+    text-decoration: none;
+    color: var(--white-color);
+    padding: 15px;    
+}
+
+div ul li :hover{
+    color:#ffc107;
+}
+#li-estilo::marker{
+    content:'🔍';
+}
+
+#info-squirtle,
+#caracteristicas {
+    padding: 20px;
+    margin-top: 10px;
+    background-color: var(--white-color);
+}
+main section, main article {
+    background-color: var(--white-color);
+    margin: 10px 0 20px 0;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+main section h2 {
+    margin-top: 5px;
+}
+table {
+    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+    padding: 50px;
+    text-align: center;
+    margin-right: 10px; 
+}
+
+footer{
+    margin: 0 auto;
+    font-size: 10px;
+    background-color: var(--gray-color);
+    color: var(--white-color);
+    padding: 10px;
+    text-align: center;
+}
+
+section ul li, a:hover{
+    opacity: 0.8;
+}
+
+.amarelo{
+    color: var(--yellow)
+}
+
+#tabela-evolucao {
+    display: flex;
+    align-items:  center;
+    justify-content: space-around;
+    text-align: center;
+    list-style: none;
+}
+
+#tabela-evolucao ul li {
+    font-weight: bold;
+}
+src[target='blank'] {
+    color: #4592c4;
+    font-weight: bold;
+}
+
+a[href*="#"]{
+    color: white;
+}
+a[href*="mailto:"],
+a[href*="https://www"]{
+    color: orangered;
+}
+a[href*="tel:"],
+a[href*="https://bulbapedia"]{
+    color: limegreen;
+}
+
+footer p, a:hover{
+    opacity: 0.8;
+}
