@@ -23,11 +23,9 @@
       }
 
       main {
-        max-width: 80vw;
-        margin: 0 auto;
         display: flex;
-        flex-direction: column;
-    
+        flex-direction: column; 
+        align-items: center; 
       }
 
       main > section {
@@ -36,6 +34,7 @@
 
       main section,
       main article {
+        width: 80vw;
         color: black;
         background-color: #fff;
         padding: 20px;
@@ -77,7 +76,6 @@
         background-color: #007bff;
         color: #fff;
         display: flex;
-        align-items: center;
         justify-content: center;
         padding: 20px;
       }
@@ -93,7 +91,6 @@
         display: flex;
         flex-wrap: wrap;
         gap: 20px;
-        align-items: center;
         justify-content: center;
         background-color: #343a40;
         padding: 10px;
@@ -101,7 +98,6 @@
       }
     
       li img {
-        width: 215px;
         height: 239px;
       }
 
