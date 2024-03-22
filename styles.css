@@ -1,126 +1,131 @@
-      /* Reset de estilos para garantir consistência em diferentes navegadores */
-      body,
-      h1,
-      h2,
-      p,
-      ul,
-      ol,
-      li,
-      figure,
-      table,
-      th,
-      td {
-        margin: 0;
-        padding: 0;
-      }
+       /* Reset de estilos para garantir consistência em diferentes navegadores */
+       body,
+       h1,
+       h2,
+       p,
+       ul,
+       ol,
+       li,
+       figure,
+       table,
+       th,
+       td {
+         margin: 0;
+         padding: 0;
+       }
+ 
+       * {
+         box-sizing: border-box;
+       }
+ 
+       /* Estilos gerais */
+ 
+       body {
+         font-family: 'Arial', sans-serif;
+         color: #333;
+         background-color: #f4f4f4;
+       }
+ 
+       main {
+         display: flex;
+         flex-direction: column;
+         align-items: center;
+       }
+ 
+       main > section {
+         padding: 20px;
+       }
+ 
+       main section,
+       main article {
+         width: 80vw;
+         color: black;
+         background-color: #fff;
+         padding: 20px;
+         border-radius: 5px;
+         box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+         margin-bottom: 20px;
+         display: flex;
+         flex-direction: column;
+       }
+ 
+       section h1,
+       section h2,
+       section h3 {
+         margin-bottom: 8px;
+       }
+ 
+       article h1,
+       article h2,
+       article h3 {
+         margin-bottom: 10px;
+       }
+ 
+       p {
+         margin-bottom: 16px;
+       }
+ 
+       ul li {
+         list-style-position: inside;
+       }
+ 
+       /* Header */
+ 
+       header {
+         background-color: #007bff;
+         color: #fff;
+         padding: 20px;
+         display: flex;
+         justify-content: center;
+       }
+ 
+       header h1 {
+         font-size: 24px;
+       }
+ 
+       /* Lista de navegação */
+ 
+       nav ul {
+         list-style: none;
+         display: flex;
+         gap: 20px;
+         justify-content: center;
+         flex-wrap: wrap;
+         background-color: #343a40;
+         padding: 10px;
+         margin-bottom: 20px;
+       }
+ 
+       nav a {
+         text-decoration: none;
+         color: #fff;
+         font-weight: bold;
+       }
+ 
+       nav a:hover {
+         color: #ffc107;
+       }
+ 
+       /* Seções */
+       .container {
+         display: flex;
+         flex-wrap: wrap;
+         justify-content: space-around;
+       }
 
-      /* Estilos gerais */
-
-      body {
-        font-family: 'Arial', sans-serif;
-        color: #333;
-        background-color: #f4f4f4;
-      }
-
-      main {
-        max-width: 80vw;
-        margin: 0 auto;
-        display: flex;
-        flex-direction: column;
-    
-      }
-
-      main > section {
+       #squirtle2{
         padding: 20px;
-      }
-
-      main section,
-      main article {
-        color: black;
-        background-color: #fff;
-        padding: 20px;
-        border-radius: 5px;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        margin-bottom: 20px;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-      }
-
-      section h1,
-      section h2,
-      section h3 {
-        margin-bottom: 8px;
-      }
-      article h1,
-      article h2,
-      article h3 {
-        margin-bottom: 10px;
-      }
-
-      .squirtle{
-        width: 120px;
-        height: 120px;  
-      }
-
-      p {
-        margin-bottom: 16px;
-      }
-
-      ul li {
-        list-style-position: inside;
-      }
-
-      /* Header */
-
-      header {
-        background-color: #007bff;
-        color: #fff;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        padding: 20px;
-      }
-
-      header h1 {
-        font-size: 24px;
-        
-      }
-
-      /* Lista de navegação */
-    
-      nav ul {
-        list-style: none;
-        display: flex;
-        flex-wrap: wrap;
-        gap: 20px;
-        align-items: center;
-        justify-content: center;
-        background-color: #343a40;
-        padding: 10px;
-        margin-bottom: 20px;
-      }
-    
-      li img {
-        width: 215px;
-        height: 239px;
-      }
-
-      nav a {
-        text-decoration: none;
-        color: #fff;
-        font-weight: bold;
-      }
-
-      nav a:hover {
-        color: #ffc107;
-      }
-
-      /* Seções */
-
-      #curiosidades li::marker {
-        content: '🔍';
-      }
+       }
+ 
+       #info-squirtle img {
+         width: 150px;
+         height: 150px;
+         align-self: center;
+       }
+ 
+       #curiosidades li::marker {
+         content: '🔍';
+       }
 
        #curiosidades ul{
         display: flex;
@@ -171,8 +176,8 @@
          margin-bottom: 0;
          display: flex;
          flex-direction: column;
-         align-items: center;
-         gap: 20px;
+        align-items: center;
+        gap: 20px;
        }
  
        footer a {
