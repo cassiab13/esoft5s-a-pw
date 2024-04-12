@@ -2,19 +2,30 @@ function changePageTitle(title) {
     document.title = title
   }
   
-  function generateInfoSection(src, pokemonName) {
+  function generateInfoSection(pokemonName, sprites) {
     const h2 = document.createElement('h2')
     h2.id = "info-pokemon-label"
     h2.textContent = `Informações sobre ${pokemonName}`
   
     const img = document.querySelector('img')
-    img.src = src
+    
     img.alt = `Imagem do pokemon ${pokemonName}`
+    img.src =  sprites[0];
+    img.addEventListener('click', () => getImage(img, sprites))
   
     const section = document.querySelector('#info-pokemon')
   
     section.appendChild(h2)
     section.appendChild(img)
+  }
+
+  let clicks = 0
+  function getImage(img, sprites){      
+       clicks++;
+      if (clicks >= sprites.length) {
+        clicks = 0;
+      }
+      img.src = sprites[clicks];
   }
   
   async function getPokemonData(name) {
@@ -29,9 +40,11 @@ function changePageTitle(title) {
       const data = await fetch(`https://pokeapi.co/api/v2/pokemon/${name}`)
   
       const jsonData = await data.json()
-  
-      generateInfoSection(jsonData.sprites.front_default, name)
-    } catch (error) {
+
+      const sprites = Object.values(jsonData.sprites).filter(sprite => typeof sprite === 'string');
+      generateInfoSection(name, sprites)      
+      
+      } catch (error) {
       console.error(error)
     }
   }
@@ -56,42 +69,40 @@ function changePageTitle(title) {
     getSearchParams()
   })
 
-  let counter = 0;
-  localStorage.setItem("count", counter)
+  let counter = parseInt(localStorage.getItem("count")) || 1;
 
   function getCountVisitors(){
-    
     document.addEventListener("DOMContentLoaded", (event) => {
-      counter = localStorage.getItem(counter)
-      console.log(counter)
-      JSON.stringify(counter)
-      console.log(counter)
-      localStorage.setItem("count", counter + 1)
+      counter++;
+      localStorage.setItem("count", counter);
     });
+    return counter;
   }
-
-  getCountVisitors()
-
 
   function getTime(){
     let date = new Date();
-    new Intl.DateTimeFormat("pt-BR", {
+    date = new Intl.DateTimeFormat("pt-BR", {
       day: "numeric",
       month: "long",
       year: "numeric",
       hour: "numeric",
       minute: "numeric"
     }).format(date);
-
-    localStorage.setItem('data', date)
+  
+    localStorage.setItem("data", date);
+    return date;
   }
 
   function addFooter(){
-    const p = document.createElement('p')
     const footer = document.querySelector('footer');
-    console.log(footer);
-    footer.appendChild(p);
-    p.textContent = `Total de visitas: ${getCountVisitors()} - Horário: ${getTime()}`;
+    if (footer) {
+      const p = document.createElement('p');
+      const count = getCountVisitors();
+      const time = getTime();
+      p.textContent = `Esta página foi visitada ${count} vezes. A última visita foi: ${time}`;
+      footer.appendChild(p);
+    } else {
+      console.error('Elemento <footer> não encontrado.');
+    }
   }
-
-  addFooter()
+addFooter()
