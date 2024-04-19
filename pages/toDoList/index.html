@@ -3,25 +3,30 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Página do Pokémon Squirtle</title>
-
+    <title>To Do List</title>
     <link rel="stylesheet" href="../../styles.css" />
     <link rel="stylesheet" href="./styles.css" />
   </head>
   <body>
+    <div class="grid">
     <header id="header">
       <a href="../../index.html">
-        <h1>Squirtle</h1>
+        <h1>To Do List</h1>
       </a>
     </header>
 
-    <main>
+    <main id="main2">
       <section id="info-pokemon" aria-labelledby="info-pokemon-label">
-        <img />
-      </section>
+        <form  id="form" class="form" name="meu-form" onsubmit="enviar(event)">
+            <input type="text" name="tarefa" />
+            <button type="submit" >Adicionar tarefa</button>
+        </form>
+
+      <img />
+    </section>
     </main>
 
-    <footer aria-label="Rodapé">
+    <footer id="footer" aria-label="Rodapé">
       <p aria-label="Copyright">
         &copy; 2024 Página do Pokémon Squirtle. Todos os direitos reservados.
       </p>
@@ -30,6 +35,6 @@
       <p><a href="tel:+5555555555">Telefone: (55) 5555-5555</a></p>
     </footer>
     <script src="./index.js"></script>
-    <script src="../../index.js"></script>
+</div>
   </body>
 </html>
