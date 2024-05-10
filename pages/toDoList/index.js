@@ -17,14 +17,13 @@ function enviar(e) {
 
     localStorage.setItem("tasks", JSON.stringify(tasks));
       
-    let addedTasks = JSON.stringify(localStorage.getItem("tasks"));
+    JSON.stringify(localStorage.getItem("tasks"));
 
     limparInputs();
 }
 
 function limparInputs(){
-    const form = document.getElementById("form");
-    const formData = new FormData(form);
-    formData.delete();
+    const formulario = document.getElementById("form");
+    formulario.reset();
 }
 
