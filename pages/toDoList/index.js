@@ -2,20 +2,29 @@ function enviar(e) {
     e.preventDefault()
     
     const formulario = document.getElementById("form");
-    console.log(formulario)
     const formData = new FormData(formulario);
-    console.log(formData)
-    const texto = formData.get('tarefa');
-    console.log(texto)
-    let addedTasks = []
-    addedTasks = JSON.parse(localStorage.getItem("tasks"));
-    if(addedTasks){
-    addedTasks.push(texto);
-    localStorage.setItem("tasks", JSON.stringify(addedTasks));
-}
+    const tarefa = formData.get('tarefa');
+    const descricao = formData.get('description');
+    
+    let tarefas = {
+        tarefa,
+        descricao
+    }
+    console.log(tarefas)
+    let tasks = JSON.parse(localStorage.getItem("tasks")) || [];
+
+    tasks.push(tarefas);
+
+    localStorage.setItem("tasks", JSON.stringify(tasks));
+      
+    let addedTasks = JSON.stringify(localStorage.getItem("tasks"));
+
+    limparInputs();
 }
 
-function addTask() {
-
+function limparInputs(){
+    const form = document.getElementById("form");
+    const formData = new FormData(form);
+    formData.delete();
 }
 
