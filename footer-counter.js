@@ -26,7 +26,6 @@ function countVisitors() {
     localStorage.getItem(lsVisistorsKey) || JSON.stringify(defaultLsVisitors)
   const lsVisitorsObj = JSON.parse(lsVisitors)
 
-
   lsVisitorsObj.count++
   lsVisitorsObj.lastVisit = getCurrentDateAndTime()
 
