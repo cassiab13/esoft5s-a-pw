@@ -18,7 +18,7 @@ function addTask(event) {
   li.innerHTML = `
       <h2>${taskTitle}</h2>
       <p>${taskDescription}</p>
-      
+      <button class='task-button' title='Editar tarefa'>✏️</button>
   `;
   
   taskList.appendChild(li);
@@ -72,4 +72,3 @@ function editTask(taskId) {
     }
   }
 }
-
